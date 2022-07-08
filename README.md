@@ -40,3 +40,12 @@
 
 <p>And many more. In some others, the intention is to deepen the knowledge. Is the case if Nodejs and git, for example. This is how the chess game begins :)</p>
 
+### July 8th, Friday
+
+When I started using TypeScript a few days ago I was unsure. It looked like it required more work than it actually paid off. But in search of motivation I kept reading how nice it was, specially for large projects. And how it was like documenting the code.
+
+Well, I am beginning to agree. The autocompletion is great when the IDE (let's say, vs code) behind knows what the type is. So if you do in JavaScript something like `const whatIsMyType;`, then vs code will not be able to autocomplete when you type `whatIsMyType.`. But if you did `const iHaveAType: string[]`, then it will greatly help you by providing you with autocomplete functions proper of an Array, such as `.includes` and others.
+
+As for the documentation, you will no longer have Objects whose key-value pairs have uncertain types.
+
+But yes, it still takes a lot of effort to be <i>forced</i> to add types to every single thing you write.
