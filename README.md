@@ -48,4 +48,4 @@ Well, I am beginning to agree. The autocompletion is great when the IDE (let's s
 
 As for the documentation, you will no longer have Objects whose key-value pairs have uncertain types.
 
-But yes, it still takes a lot of effort to be <i>forced</i> to add types to every single thing you write.
+But yes, it is still a pain to be <i>forced</i> to add types to every single thing you write.
