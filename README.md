@@ -49,3 +49,17 @@ Well, I am beginning to agree. The autocompletion is great when the IDE (let's s
 As for the documentation, you will no longer have Objects whose key-value pairs have uncertain types.
 
 But yes, it is still a pain to be <i>forced</i> to add types to every single thing you write.
+
+### July 12th, Monday
+
+Today I was going to add new features to the chess game. In the end I decided to see how testing in React works (after adding 'turns' feature, so that white player cannot move twice, etc.).
+
+I was reading a bit on testing in the weekend, and until now it seemed like an obscure blackbox. There are several testing types, unit tests and integration (whose threshold in React components is vague). Very simplified as well, one can use React-Testing-Library and / or Jest. There are of course other options. 
+
+In this first contact with React testing (let's be honest, with testing), I am using just Jest. Not having created the project with CRA, I had to fight some initial setup, including some new devDependencies (react-test-rendered, jest, babel-jest and @babel/preset-typescript, ts-jest). Last two added due to having TypeScript files (it seems you cannot import a .ts file into .js, so I had to have .ts test files to be able to import the .tsx components).
+
+Using CSS modules also complicated a bit the setup, but [Mocking CSS Modules](https://jestjs.io/docs/webpack#mocking-css-modules) explains how to do this very gracefully.
+
+So it was an interesting setup, but in the end, as usually, it paid off. I added the most simple test file for a Cell rendering (in the Chess board). I run `npm test`, which calls `jest` command. It passed the (snapshot) test. Then I made a mistake (on purpose, of course) in which a white cell gets a class for a black one. I run the test agains and it fail the test! Wonderfull. It even detailed why it failed: class had changed. And this is how snapshot tests work, they compare the current snapshot to a previous (even commited) one. Really cool.
+
+This is great to get started into more serious testing, and having a way to make sure any refractoring does not change the rendered components.
