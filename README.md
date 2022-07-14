@@ -63,3 +63,20 @@ Using CSS modules also complicated a bit the setup, but [Mocking CSS Modules](ht
 So it was an interesting setup, but in the end, as usually, it paid off. I added the most simple test file for a Cell rendering (in the Chess board). I run `npm test`, which calls `jest` command. It passed the (snapshot) test. Then I made a mistake (on purpose, of course) in which a white cell gets a class for a black one. I run the test agains and it fail the test! Wonderfull. It even detailed why it failed: class had changed. And this is how snapshot tests work, they compare the current snapshot to a previous (even commited) one. Really cool.
 
 This is great to get started into more serious testing, and having a way to make sure any refractoring does not change the rendered components.
+
+### July 14th, Monday
+
+Todays learnings are as short and nice. And they are very short. A few weeks ago I deciding if buying a book whose title I do not remember, but it was something like <i>How to program </i>less <i>bad</i>. Ate the beginning there was a set of questions, aiming for the reader to realize if the book was needed or not. One of the questions was "How do you debug?". There where three possible anwers:
+
+<ul>
+<li>Who needs debugging anyway, the user will just inform about the bugs</li>
+<li>I print / log everything to the console</li>
+<li>I use debugging tool</li>
+</ul>
+
+We will skip the first answer (clearly the correct one). The last one did not actually say 'debugging tools', but some actual tool whose name I do not remember.
+My case is the second one, I tend to print (console.log / print) eeeeeverything when I want to debug. Efficient, uh?
+
+Well today printing was not enough, so I decided to take the step. Went to Google and typed 'react vscode debugging'.
+
+I can only say it is awesome. Not only the potential, but also how easy it was, how simple it is to watch specific variables, etc. It reminds me to debugging in Matlab, back in the university when I had a single file (or a few anyway), and all was nice and sequential. I was afraid of how this would be in a React aüpplication, but it ended up being quite a nice experience. 
