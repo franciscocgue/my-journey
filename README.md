@@ -1,34 +1,33 @@
 # My Journey
 
-### Some intro
-
-<p>A few days ago a video caught my eye. It explained what a web developer would have done different, were he to start today the path to become a developer. Many of the ideas were interesting, but one particular one was new to me: keeping a diary.</p>
-
-<p>This is nice for two reasons. First, it lets you see your development. Yes, we all get better with practice, interest and some work. But <i>how good</i>? And do we remember all those issues we faced on the way? A diary of teh journey should help keeping track. Second, it lets others see who you are, and how you got there. This might be some added value to the CV, for example.</p>
+<p>A few days ago a video caught my eye. It explained what a web developer would have done different, were he to start anew the path to become a developer. Many of the ideas were interesting, but a particular one was new to me: keeping a diary. The argument was that this helps you track your growth and development.</p>
 
 ### Until now - June 2022
 
-<p>Unfortunately I am not starting this at the beginning of the path, but around 1 year later. Or 5, since I started working. I graduated from a master in Aerospace Engineering in late 2017. Until done I did some few-months internships, mainly working with Matlab, or other in-house software. Every thing related to Aircraft modelling (trajectory first, then propulsion systems). In September 2017 I move to Germany, where I start working as an engineer in a US company.</p>
+<p>Unfortunately I am not starting this at the beginning of the path, but 5 years later, since I started working. After finishing a master in Aerospace Engineering in Madrid in late 2017, I moved to Germany, where I began to work as engineer. Before that, I did a couple of internships related to aircraft systems modelling.
 
-<p>For the first 1 to 2 years I work both both as a process (manufacturing) engineer, and I am also very involved in the finance department. Even if these tasks are not related, it allows me to have a broader and more interesting picture about the company. After this time I work uniquely as process engineer.</p>
+During the last years, I developed SCADA applications (Supervisory Control adn Data Acquisition). Both the backend and frontend, including the database design. The SCADA software used a Java version of Python, Jython. Apart from that, my first contacts with Python came from the need to automate some spreadsheets work, Excel. For that I used the awesome resource [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/). Later, I had to face some repetitive tasks, which are as necessary as boring. For that I started using Selenium, and discovered how nice it felt to automate broswer tasks. To keep track of these files I used git.
 
-<p>During this 5 years I develop SCADA (Supervisory Control adn Data Acquisition) solutions. This means, the window that operators will see in the shopflor. This includes both backend and forntend.</p>
+Around one year ago, the environment changed to React and Node: web applications. So I started to learn JavaScript. And HTML adn CSS, with which I was already familiar. This opened a whole new set of possibilities and things I did not know: hosting applications in the cloud (AWS), CI/CD, Docker, etc.
 
-(( not finished ))
+<hr>
 
-### July 2022
+### July 1st, 2022
 
-#### <i>TL;DR</i>
+#### <i>Hobby projects: Chess Game</i>
 
-<p><i>I start to develop a chess game as a hobby project to start learning, for example, about TypeScript.</i></p>
-
-<p>All the project on which I work are work-related projects. That is, I have no <i>hobby</i> projects. Hobby projects are great for one main reason: they let you decide what you want to do, and this means the possibility of <b>learning new things</b>. And this is just great.</p>
-
-<p>In the fast-paced industry it is usually not possible to try, test and learn new things. Once a solution meets the requirements, it is enough. And this is good, I am not saying the opposite. But from a self-development standpoint, this is not enough. One needs more.</p>
-
-<p>Sometimes you want to code again every thing (third time's the charm). Or try a new approach. Or just improve it. Or add new features. And I will use these hobby projects as a way to learn new things, including:</p>
+I decided to start hobby projects to try things for which I do not have time in the fast-paced work environment. I picked a Chess game, for three main reasons:
 
 <ul>
+<li>Sharpen frontend skills</li>
+<li>Interesting practice for backend & logic</li>
+<li>Project can be easily extended: multiplayer, saving scores to DB, AI & single player, etc.</li>
+</ul>
+
+<p>The idea is to use this project as a way to leatrn, get familiar or improve, among others, the following items:</p>
+
+<ul>
+<li>TypeScript</li>
 <li>Docker & Kubernetes</li>
 <li>React Redux</li>
 <li>React Testing Library</li>
@@ -36,11 +35,16 @@
 <li>AI</li>
 <li>Webpack</li>
 <li>Babel</li>
+<li>Debugging</li>
 </ul>
 
-<p>And many more. In some others, the intention is to deepen the knowledge. Is the case if Nodejs and git, for example. This is how the chess game begins :)</p>
+<p>In some cases, the intention is to deepen the knowledge. In others, to have a basic understanding of the technology.</p>
+
+<hr>
 
 ### July 8th, Friday
+
+#### <i>Typescript</i>
 
 When I started using TypeScript a few days ago I was unsure. It looked like it required more work than it actually paid off. But in search of motivation I kept reading how nice it was, specially for large projects. And how it was like documenting the code.
 
@@ -50,7 +54,11 @@ As for the documentation, you will no longer have Objects whose key-value pairs 
 
 But yes, it is still a pain to be <i>forced</i> to add types to every single thing you write.
 
+<hr>
+
 ### July 12th, Monday
+
+#### <i>Snapshot testing with Jest</i>
 
 Today I was going to add new features to the chess game. In the end I decided to see how testing in React works (after adding 'turns' feature, so that white player cannot move twice, etc.).
 
@@ -64,7 +72,11 @@ So it was an interesting setup, but in the end, as usually, it paid off. I added
 
 This is great to get started into more serious testing, and having a way to make sure any refractoring does not change the rendered components.
 
+<hr>
+
 ### July 14th, Monday
+
+#### <i>Debugging</i>
 
 Todays learnings are as short and nice. And they are very short. A few weeks ago I deciding if buying a book whose title I do not remember, but it was something like <i>How to program </i>less <i>bad</i>. Ate the beginning there was a set of questions, aiming for the reader to realize if the book was needed or not. One of the questions was "How do you debug?". There where three possible anwers:
 
