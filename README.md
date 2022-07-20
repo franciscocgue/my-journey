@@ -78,7 +78,7 @@ This is great to get started into more serious testing, and having a way to make
 
 #### <i>Debugging</i>
 
-Todays learnings are as short and nice. And they are very short. A few weeks ago I deciding if buying a book whose title I do not remember, but it was something like <i>How to program </i>less <i>bad</i>. Ate the beginning there was a set of questions, aiming for the reader to realize if the book was needed or not. One of the questions was "How do you debug?". There where three possible anwers:
+Todays learnings are as short as nice. And they are very short. A few weeks ago I deciding if buying a book whose title I do not remember, but it was something like <i>How to program </i>less <i>bad</i>. Ate the beginning there was a set of questions, aiming for the reader to realize if the book was needed or not. One of the questions was "How do you debug?". There where three possible anwers:
 
 <ul>
 <li>Who needs debugging anyway, the user will just inform about the bugs</li>
@@ -92,3 +92,18 @@ My case is the second one, I tend to print (console.log / print) eeeeeverything 
 Well today printing was not enough, so I decided to take the step. Went to Google and typed 'react vscode debugging'.
 
 I can only say it is awesome. Not only the potential, but also how easy it was, how simple it is to watch specific variables, etc. It reminds me to debugging in Matlab, back in the university when I had a single file (or a few anyway), and all was nice and sequential. I was afraid of how this would be in a React aüpplication, but it ended up being quite a nice experience. 
+
+
+<hr>
+
+### July 20th, Wednesday
+
+#### <i>Google Fonts</i>
+
+Today I was working on my [chess game](https://github.com/franciscocgue/chessdrez). Being a hobby project I freely decide what I want to work on, which features / part of the project. So today I thought it would be nice to have a basic timer or counter, to know how long is the current move taking for the current player.
+
+Initially it was an incremental counter, increasing one unit per second. It was simple to convert it to a chronometer-like display, so that one and a half minutes looks like `01:30`. But the font was wrong. That display is calling for a digital-like font!
+
+So after a bit of searching I found [Google Fonts](https://fonts.google.com/). I already knew them, but had never used. The experience was quite simple, both looking for fonts and then using then in my CSS file.
+
+From my experience, when you show a project, the first thing to strike and produce an effect on the user is how the application <i>looks</i>. UX, performance, etc. are also important, but first thing is usually visualization.
