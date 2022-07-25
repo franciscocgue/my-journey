@@ -107,3 +107,13 @@ Initially it was an incremental counter, increasing one unit per second. It was 
 So after a bit of searching I found [Google Fonts](https://fonts.google.com/). I already knew them, but had never used. The experience was quite simple, both looking for fonts and then using then in my CSS file.
 
 From my experience, when you show a project, the first thing to strike and produce an effect on the user is how the application <i>looks</i>. UX, performance, etc. are also important, but first thing is usually visualization.
+
+<hr>
+
+### July 25th, Monday
+
+#### <i>Chessdrez I</i>
+
+A few weeks ago I mentioned a chess game, as a way to practice, improve and learn new skills. This projects _chessdrez_ (chess translates into ajedrez in Spanish) is coming to life little by little. For now it is completely Front-end. This means games are not saved, multiplayer is not possible, etc.
+
+To change this I will set a (hopefully) simple server with Node. From this server, the idea is to create 'play rooms', enable multiplayer with websockets, and to save game status. Some new Frontend features also need to be completed, to make the game more "enjoyable".
