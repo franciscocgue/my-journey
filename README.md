@@ -120,7 +120,7 @@ To change this I will set a (hopefully) simple server with Node. From this serve
 
 <hr>
 
-### July 26th, Monday
+### July 26th, Tuesday
 
 #### <i>Chessdrez II</i>
 
