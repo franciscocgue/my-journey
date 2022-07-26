@@ -24,7 +24,7 @@ I decided to start hobby projects to try things for which I do not have time in 
 <li>Project can be easily extended: multiplayer, saving scores to DB, AI & single player, etc.</li>
 </ul>
 
-<p>The idea is to use this project as a way to leatrn, get familiar or improve, among others, the following items:</p>
+<p>The idea is to use this project as a way to learn, get familiar or improve, among others, the following items:</p>
 
 <ul>
 <li>TypeScript</li>
@@ -117,3 +117,62 @@ From my experience, when you show a project, the first thing to strike and produ
 A few weeks ago I mentioned a chess game, as a way to practice, improve and learn new skills. This projects _chessdrez_ (chess translates into ajedrez in Spanish) is coming to life little by little. For now it is completely Front-end. This means games are not saved, multiplayer is not possible, etc.
 
 To change this I will set a (hopefully) simple server with Node. From this server, the idea is to create 'play rooms', enable multiplayer with websockets, and to save game status. Some new Frontend features also need to be completed, to make the game more "enjoyable".
+
+<hr>
+
+### July 26th, Monday
+
+#### <i>Chessdrez II</i>
+
+So, I decided to document a bit the process.
+
+Back when I started learning React a year ago, I used to write steps for the <i>future me</i>. But documenting the processes and the many how to's helped me actually remember the steps. So let us do it for the set up of the server.
+
+<ol>
+<li>Create <i>server</i> directory at the same level than <i>client</i>, just with <i>src</i>. These are our backend and frontend directories</li>
+<li>
+Create <i>index.js</i> file inside. <i>Note:</i> later we might want to use TyepeScript, but lets keep it simple for now. Sample file:
+<pre>
+  <code>
+const express = require('express');
+
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+    console.log('Server started on port ' + port.toString());
+});
+  </code>
+</pre>
+
+</li>
+
+</ol>
+
+After testing it works with `node .\src\server\index.js`, we keep adding stuff. First thing is to <i>serve</i> the file that Reacts creates, that is, the application. Since we are using Express, we will use its <i>sendFile</i>.
+
+But where is this file compressing all the React SPA application? That depends on the webpack configuration. There should be an "output" key indicating where is the build located, after we run webpack command. This is normally different for Production and Development. In the latter we use "hot reload", which help us develop faster: after we save any change, this hot reload will load the new bundle file into memory. For this we need to install <i>webpack-dev-server</i>.
+
+This I vaguely recalled from a couple of months ago when I was preparing a template / boilerplate that would:
+
+<ul>
+<li>Webpack and NOT CRA</li>
+<li>Work well for a Node-React application</li>
+<li>Enable hot-reloading for a great development experience</li>
+</ul>
+
+Details for this template can he seen in the repo, checking git logs history.
+
+Another key step is to define a set of scripts in the <i>package.json</i> file. These scripts will do things such as:
+
+<ul>
+<li>Production: build React app</li>
+<li>Production: serve our server file via <code>node index.js</code> file</li>
+<li>Dev: build React app via webpack and its hot reloading</li>
+<li>Dev: serve our server file, this time with <code>nodemon index.js</code>, where nodemon will automatically refresh any saved changes on index.js</li>
+<li>Dev: I like to use <i>concurrently</i> to run both previous commands at the same time while in development</li>
+<li>Testing scripts</li>
+<li>... and run any commands needed in the Docker file, but that is for later</li>
+</ul>
+
+This is already too long, so I stop here. But than a detailed guide I just want to have an overview to guide the steps. Detail is always available in the repo ;)
