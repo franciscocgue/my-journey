@@ -176,3 +176,38 @@ Another key step is to define a set of scripts in the <i>package.json</i> file. 
 </ul>
 
 This is already too long, so I stop here. But than a detailed guide I just want to have an overview to guide the steps. Detail is always available in the repo ;)
+
+<u><i>Update: </i></u> 
+
+I just realized something which is interesting but also silly. In one of the steps above I mention <i>concurrently</i> to run the server index.js file, and serve the React application as well. This serving of the React application is loaded into memory and not in the <code>/dist</code> or <code>/public</code> directory. That means, the index.js file which serves the React application from the server (backend), does not have access to the React bundle (which is in memory).
+
+So what happens is, webpack (dev) will serve the React bundle (lets say, in port 3000). But the command <code>node src/server/index.js</code> will start the server. The server tries to serve the React bundle from <code>/dist</code> (or <code>/public</code>), failing to find it. But every other thing the server does (APIs, for example, to provide the React application with database data, etc.) will work. 
+
+Then, to access and test the application we need to open in the browser <code>http://localhost:3000/</code>, which is the React bundle, served by webpack, nothing to do with our backend server. BUT the server is running, so that if React needs something from it, it will work. In all this, the step that is missing is to let webpack know where is our server url. 
+
+For that we can use DefinePlugin, to define a global variable configured at compile time, usable inside React (for example via:process.env.REACT_APP_BACKEND_URL ). Something like:
+
+<i>webpack.config.js</i>
+
+<pre>
+  <code>
+const { DefinePugin } = require('webpack');
+
+// define backend URL depending of whether in prod or not
+const react_app_backend_url = process.env.NODE_ENV !== 'prod' ? 'http://localhost:8080' : ''
+
+module.exports = {
+  entry: ...
+  output: ...
+  module: ...
+  plugins: [
+    new DefinePlugin({
+      'process.env.REACT_APP_BACKEND_URL': JSON.stringify(react_app_backend_url)
+    })
+  ]
+  ...
+}
+  </code>
+</pre>
+
+
