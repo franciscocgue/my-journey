@@ -211,7 +211,7 @@ module.exports = {
 </pre>
 
 
-### July 27th, Tuesday
+### July 27th, Wednesday
 
 #### <i>Chessdrez III</i>
 
