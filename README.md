@@ -211,3 +211,21 @@ module.exports = {
 </pre>
 
 
+### July 27th, Tuesday
+
+#### <i>Chessdrez III</i>
+
+That comment from yesterday, very beautiful and it seems it could make sense. But we need proof, we need to test it.
+
+We will set a simple route in the server, for a get request. Then in the React application we will add a button that makes this request. It will simply print something to the console. The objective is to prove that the React application as a bundle served from webpack does have access to the server, which is being run in parallel, <i>concurrently</i>.
+
+When setting up the routes, some things that help:
+
+<ul>
+  <li>Test your route from <a href="https://www.postman.com/" target="_blank">Postman API Platform</a>. Note: to send request to localhost you might need to have the desktop version.</li>
+  <li>Make sure the server is up and running</li>
+  <li>If you get "Cross-Origin" requests errors, make sure you are using <i>cors</i></li>
+</li>
+
+
+</ul>
