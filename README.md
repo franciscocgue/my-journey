@@ -229,3 +229,29 @@ When setting up the routes, some things that help:
 
 
 </ul>
+
+### July 30th, Saturday
+
+#### <i>ES modules and CommonJS</i>
+
+I mentioned some days ago that I wanted to get some practice with TypeScript. And yes, the React part of the project is mainly TS. But for the server side, I am using the quick and comfortable solution: JavaScript. Let us change that.
+
+I started with one of the files in the <i>src/server/routes</i> directory. It has a simple get route, which callbacks a function with request and response arguments (I am using Express). First thing, we have to give a type to this request and response. I google a bit, and we need to install some express types, then import them, something like <code>import express, { Request, Response } from 'express'</code>.
+
+There we have already first issues. <i>import</i> is not accepted. Then some more googling, and <q><i>ES modules are the standard for JavaScript, and use </i>import, export<i> syntax. CommonJS is the default in NodeJS, and it uses </i>require(), module.exports.</q>
+
+In the <i>package.json</i> we can specify behaviour. As explained [here](https://nodejs.org/docs/latest-v13.x/api/esm.html#esm_enabling), in NodeJS <q><i>If the nearest parent package.json lacks a "type" field, or contains "type": "commonjs", .js files are treated as CommonJS</i></q>.
+
+Just for testing, I decided to add <code>"type": "module"</code> into the <i>package.json</i>. Automatically I get the error for <code>require()</code>, <q><i>ReferenceError: require is not defined in ES module scope, you can use import instead</i></q>. It even lets you know that this behaviour comes from  <code>"type": "module"</code>!
+
+So, coming back to converting JS into TS. I will be using ES modules, so I need to convert all require() into imports. After some (more) googling, it seems that will avoid issues when using TypeScript. Also, personally, using a single sintax both for React and for Node server seems something I like. I also like <i>import</i> better, as it allows to import multiple objects from the module, which are exported separately. With <i>require()</i>, to my (little) knowledge, you can only import one object (even if this object contains multiple objects, of course).
+
+Some other points to consider:
+
+<ul>
+<li>[ES modules cannot import directories](https://stackoverflow.com/questions/64453859/directory-import-is-not-supported-resolving-es-modules-with-node-js)</li>
+<li>[Solve - __dirname is not defined in ES module scope in JS](https://bobbyhadz.com/blog/javascript-dirname-is-not-defined-in-es-module-scope)</li>
+</ul>
+
+
+To be honest, this requires a lot of work to convert files. Everywhere where <i>__dirname</i> is used, or <i>require()</i>, has to be edited. Also the directory imports need to be converted as well, and the exports too. But thanks to tjis I have now a better idea about what ES modules and CommonJS are, and their differences and history!
